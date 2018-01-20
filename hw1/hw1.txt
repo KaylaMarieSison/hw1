@@ -1,0 +1,83 @@
+Problem 1 (Course Policies, 10%)
+=============================================
+a.) Which of the following are acceptable behaviors in solving homeworks/projects?
+	1. Looking up information relevant to the course online.
+	4. Asking the course staff for help.
+b.) To dispute a grade on an assignment you should:
+	2. Assign the issue to your grader on GitHub. 
+	3. Go see a regrade TA if assigning the issue to your grader did not resolve your concern.
+	4. Raise an issue within 1 week of receiving the grade.
+ 
+c.) Which of the following are recommended ways of writing code?
+	2. Emacs
+	3. Eclipse
+	4. Sublime
+	5. Microsoft Visual Studio
+ 
+d.) What is the late submission policy?
+	2. Each student has 3 late days of which only one can be used per HW.
+ 
+e.) What should you do to ensure you are submitting your code correctly?
+	2. Clone your github directory, checkout the SHA you plan to submit, and rerun your tests.
+	3. Use the long SHA in your submission (20+ digits/letters).
+	4. Check the output from the submission system when you submit your code: this may alert you to missing files or compilation errors.
+	5. Resubmit your code if you find additional problems before the deadline.
+
+
+Problem 2 (Git, 10%)
+=============================================
+a. ) Which of the following git user interfaces are accepted and supported in this course?
+	3. Terminal (Mac or Linux)
+b.) When cloning a Git repo, which of the following should you avoid?
+	Cloning into a folder that itself is a git repo.
+c.) Provide the appropriate git command to perform the following operations:
+	Stage an untracked file to be committed. The (hypothetical) file is called 'hw1q2b.cpp'.
+	git add hw1q2b.cpp
+	Display the details of the last three commits in the repository.
+	git log -p -3
+d.) Let's say you staged three files to be committed. Then, you ran the following command: git commit. What will git do? 
+	Git will store the files in the local repository. An example command would be git commit -m "non-optional commit message”.
+e.) What is the full command to re-clone your private CSCI104 repo to your VM? Assume you are in an appropriate folder.
+	Git clone https://github.com/usc-csci104-spring2018/hw-molld.git
+
+
+Problem 4 (Recursion, 10%)
+=============================================
+1.) When you call funcA([1,2,3,4,5], 5), the output is as follows:
+
+	1
+	2
+	3
+	4
+	5
+	
+Function A takes in an array of integers as well as an integer representing the number of array elements that will be printed out. In the above example, all five elements of the array are printed out because the int size given in the function call is five. Function A immediately calls function B, which recursively iterates through the array’s elements starting from the first element at index 0. When function A makes this call to function B, it makes min 0 and max size-1, allowing for the function to iterate the whole array (since size-1 is equivalent to the index of the last element).
+
+2.) Function B fails to terminate if a is an empty array. This is because if the array is empty, min will never equal to max. This means the base case will never be attained and the recursive calls will never end. Function B will always terminate for other input values because it will always eventually reach a point where min == max, allowing for the recursive call to terminate.
+
+3.) Function B prints out the elements in the array from starting index min to the last index max. It does this by recursively iterating through the array's elements starting from min (index 0). Every time function B is called, it sets the new max to size-1, allowing for the function to iterate through the whole array since size-1 is equivalent to the index of the last element. The function also uses the mid variable to cut down the range each time so that it essentially focuses on one element at a time.
+
+
+Problem 5 (Recursion, 10%)
+=============================================
+For each current array, the program checks if the previous integer is less than or equal to the last one (line 22), and returns true if it is. Then in line 12, the program uses head recursion to check if line 22 returned true. If it did, the program continues checking. If the array is not in order, then the statement on line 24 returns false to line 12. However, the program never actually reaches the “return true” statement in line 22 because as it makes the recursive calls, it continually cuts off the last integer (line 12) before it reaches the “return true” statement. This means that when the program receives an array of increasing order, the array will be a=0 before it can make the last iteration. This happens because the condition for the if statement is a>0, so when a=0, it skips the entire if statement and returns false. What I did to fix it was to add a another if statement after that checks if a==0 then returns true, thus accounting for any increasing arrays.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
