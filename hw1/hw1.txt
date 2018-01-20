@@ -44,7 +44,7 @@ c.) Provide the appropriate git command to perform the following operations:
 d.) Let's say you staged three files to be committed. Then, you ran the 
 following command: git commit. What will git do? 
 	Git will store the files in the local repository. An example command would
-	 be git commit -m "non-optional commit message”.
+	 be git commit -m "commit message".
 e.) What is the full command to re-clone your private CSCI104 repo to your VM? 
 Assume you are in an appropriate folder.
 	Git clone https://github.com/usc-csci104-spring2018/hw-molld.git
